@@ -28,8 +28,9 @@ class BingoTest {
 		String anyValue = "42";
 		givenBingoBoardOfSize(1, 1);
 		whenCellIsDefined(0, 0, anyValue);
-		assertThat(assertThrows(RuntimeException.class, () -> whenCellIsDefined(0, 0, anyValue)))
-				.hasMessageContaining("already defined");
+		assertThat(assertThrows(RuntimeException.class, () -> {
+			whenCellIsDefined(0, 0, anyValue);
+		})).hasMessageContaining("already defined");
 	}
 
 	@Test
@@ -37,15 +38,17 @@ class BingoTest {
 		String anyValue = "42";
 		givenBingoBoardOfSize(2, 2);
 		whenCellIsDefined(0, 1, anyValue);
-		assertThat(assertThrows(RuntimeException.class, () -> whenCellIsDefined(1, 0, anyValue)))
-				.hasMessage(anyValue + " already present at 0,1");
+		assertThat(assertThrows(RuntimeException.class, () -> {
+			whenCellIsDefined(1, 0, anyValue);
+		})).hasMessage(anyValue + " already present at 0,1");
 	}
 
 	@Test
 	void aNonInitializedBoardCannotBeMarked() {
 		givenBingoBoardOfSize(1, 1);
-		assertThat(assertThrows(RuntimeException.class, () -> whenCellIsMarked(0, 0)))
-				.hasMessageContaining("not initialized");
+		assertThat(assertThrows(RuntimeException.class, () -> {
+			whenCellIsMarked(0, 0);
+		})).hasMessageContaining("not initialized");
 	}
 
 	@Test
