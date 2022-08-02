@@ -10,13 +10,13 @@ class BingoTest {
 	BingoBoard board;
 
 	@Test
-	void anNewlyCreatedBoardIsNotInitialized() {
+	void aNewlyCreatedBoardIsNotInitialized() {
 		givenBingoBoardOfSize(1, 1);
 		thenBoardIsNotInitialzed();
 	}
 
 	@Test
-	void whenAllFieldsAreSetTheBoarIsInitialized() {
+	void whenAllFieldsAreSetTheBoardIsInitialized() {
 		String anyValue = "42";
 		givenBingoBoardOfSize(1, 1);
 		whenCellIsDefined(0, 0, anyValue);
