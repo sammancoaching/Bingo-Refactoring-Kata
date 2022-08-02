@@ -24,6 +24,17 @@ class BingoTest {
 	}
 
 	@Test
+	void whenAllFieldsOnRectangularBoardAreSetItIsInitialized() {
+		String one = "0, 0";
+		String two = "0, 1";
+		givenBingoBoardOfSize(1, 2);
+		whenCellIsDefined(0, 0, one);
+		whenCellIsDefined(0, 1, two);
+		thenBoardIsInitialzed();
+
+	}
+
+	@Test
 	void aDefinedCellCantBeRedefinedEvenIfItsTheSameValue() {
 		String anyValue = "42";
 		givenBingoBoardOfSize(1, 1);
