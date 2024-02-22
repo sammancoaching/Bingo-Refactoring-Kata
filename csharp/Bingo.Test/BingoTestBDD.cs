@@ -1,8 +1,6 @@
-using FluentAssertions;
-
 namespace Bingo.Test;
 
-public class BingoTestBDD
+public class BingoTestBdd
 {
 
     BingoBoard board;
