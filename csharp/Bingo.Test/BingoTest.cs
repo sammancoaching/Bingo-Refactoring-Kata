@@ -14,7 +14,7 @@ public class BingoTest
     void AnNewlyCreatedBoardIsNotInitialized()
     {
         board = new BingoBoard(1, 1);
-        board.IsInitialzed().Should().BeFalse();
+        board.IsInitialized().Should().BeFalse();
     }
 
     [Fact]
@@ -23,7 +23,7 @@ public class BingoTest
         var anyValue = "42";
         board = new BingoBoard(1, 1);
         board.DefineCell(0, 0, anyValue);
-        board.IsInitialzed().Should().BeTrue();
+        board.IsInitialized().Should().BeTrue();
     }
 
     [Fact]
@@ -34,7 +34,7 @@ public class BingoTest
         board = new BingoBoard(1, 2);
         board.DefineCell(0, 0, one);
         board.DefineCell(0, 1, two);
-        board.IsInitialzed().Should().BeTrue();
+        board.IsInitialized().Should().BeTrue();
     }
 
     [Fact]
