@@ -29,11 +29,9 @@ class BingoTest2 {
 	}
 	@Test
 	void whenAllFieldsOnRectangularBoardAreSetItIsInitialized() {
-		String one = "0, 0";
-		String two = "0, 1";
 		board = new BingoBoard(1, 2);
-		board.defineCell(0, 0, one);
-		board.defineCell(0, 1, two);
+		board.defineCell(0, 0, "1");
+		board.defineCell(0, 1, "2");
 		assertThat(board.isInitialzed()).isTrue();
 	}
 

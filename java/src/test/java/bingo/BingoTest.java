@@ -25,11 +25,9 @@ class BingoTest {
 
 	@Test
 	void whenAllFieldsOnRectangularBoardAreSetItIsInitialized() {
-		String one = "0, 0";
-		String two = "0, 1";
 		givenBingoBoardOfSize(1, 2);
-		whenCellIsDefined(0, 0, one);
-		whenCellIsDefined(0, 1, two);
+		whenCellIsDefined(0, 0, "1");
+		whenCellIsDefined(0, 1, "2");
 		thenBoardIsInitialzed();
 
 	}
