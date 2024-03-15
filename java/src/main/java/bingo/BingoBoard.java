@@ -24,7 +24,7 @@ public class BingoBoard {
 	}
 
 	public void markCell(int x, int y) {
-		if (!isInitialzed()) {
+		if (!isInitialized()) {
 			throw new IllegalStateException("board not initialized");
 		}
 		marked[x][y] = true;
@@ -34,7 +34,7 @@ public class BingoBoard {
 		return marked[x][y];
 	}
 
-	public boolean isInitialzed() {
+	public boolean isInitialized() {
 		for (String[] row : cells) {
 			for (String col : row) {
 				if (col == null)

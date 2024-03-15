@@ -12,7 +12,7 @@ class BingoTest {
 	@Test
 	void aNewlyCreatedBoardIsNotInitialized() {
 		givenBingoBoardOfSize(1, 1);
-		thenBoardIsNotInitialzed();
+		thenBoardIsNotInitialized();
 	}
 
 	@Test
@@ -20,7 +20,7 @@ class BingoTest {
 		String anyValue = "42";
 		givenBingoBoardOfSize(1, 1);
 		whenCellIsDefined(0, 0, anyValue);
-		thenBoardIsInitialzed();
+		thenBoardIsInitialized();
 	}
 
 	@Test
@@ -30,7 +30,7 @@ class BingoTest {
 		givenBingoBoardOfSize(1, 2);
 		whenCellIsDefined(0, 0, one);
 		whenCellIsDefined(0, 1, two);
-		thenBoardIsInitialzed();
+		thenBoardIsInitialized();
 
 	}
 
@@ -83,16 +83,16 @@ class BingoTest {
 		board.markCell(x, y);
 	}
 
-	void thenBoardIsNotInitialzed() {
+	void thenBoardIsNotInitialized() {
 		assertThat(boardInitializeState()).isFalse();
 	}
 
-	void thenBoardIsInitialzed() {
+	void thenBoardIsInitialized() {
 		assertThat(boardInitializeState()).isTrue();
 	}
 
 	boolean boardInitializeState() {
-		return board.isInitialzed();
+		return board.isInitialized();
 	}
 
 	void thenCellIsMarked(int x, int y) {
