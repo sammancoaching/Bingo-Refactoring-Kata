@@ -17,7 +17,7 @@ class BingoTest2 {
 	@Test
 	void anNewlyCreatedBoardIsNotInitialized() {
 		board = new BingoBoard(1, 1);
-		assertThat(board.isInitialzed()).isFalse();
+		assertThat(board.isInitialized()).isFalse();
 	}
 
 	@Test
@@ -25,7 +25,7 @@ class BingoTest2 {
 		String anyValue = "42";
 		board = new BingoBoard(1, 1);
 		board.defineCell(0, 0, anyValue);
-		assertThat(board.isInitialzed()).isTrue();
+		assertThat(board.isInitialized()).isTrue();
 	}
 	@Test
 	void whenAllFieldsOnRectangularBoardAreSetItIsInitialized() {
@@ -34,7 +34,7 @@ class BingoTest2 {
 		board = new BingoBoard(1, 2);
 		board.defineCell(0, 0, one);
 		board.defineCell(0, 1, two);
-		assertThat(board.isInitialzed()).isTrue();
+		assertThat(board.isInitialized()).isTrue();
 	}
 
 	@Test
