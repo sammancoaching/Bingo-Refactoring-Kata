@@ -29,11 +29,9 @@ public class BingoTest
     [Fact]
     void WhenAllFieldsOnRectangularBoardAreSetItIsInitialized()
     {
-        var one = "0, 0";
-        var two = "0, 1";
         board = new BingoBoard(1, 2);
-        board.DefineCell(0, 0, one);
-        board.DefineCell(0, 1, two);
+        board.DefineCell(0, 0, "1");
+        board.DefineCell(0, 1, "2");
         board.IsInitialzed().Should().BeTrue();
     }
 

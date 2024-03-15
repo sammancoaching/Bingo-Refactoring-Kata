@@ -24,11 +24,9 @@ public class BingoTestBdd
     [Fact]
     void WhenAllFieldsOnRectangularBoardAreSetItIsInitialized()
     {
-        var one = "0, 0";
-        var two = "0, 1";
         GivenBingoBoardOfSize(1, 2);
-        WhenCellIsDefined(0, 0, one);
-        WhenCellIsDefined(0, 1, two);
+        WhenCellIsDefined(0, 0, "1");
+        WhenCellIsDefined(0, 1, "2");
         ThenBoardIsInitialzed();
     }
 
