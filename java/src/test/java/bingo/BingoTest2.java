@@ -29,7 +29,7 @@ class BingoTest2 {
 	}
 	@Test
 	void whenAllFieldsOnRectangularBoardAreSetItIsInitialized() {
-		String one = "one two three";
+		String one = "one, two, three";
 		String two = "Bingo cells can contain any text";
 		board = new BingoBoard(1, 2);
 		board.defineCell(0, 0, one);

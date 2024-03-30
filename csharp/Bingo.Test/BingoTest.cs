@@ -29,7 +29,7 @@ public class BingoTest
     [Fact]
     void WhenAllFieldsOnRectangularBoardAreSetItIsInitialized()
     {
-        var one = "one two three";
+        var one = "one, two, three";
         var two = "Bingo cells can contain any text";
         board = new BingoBoard(1, 2);
         board.DefineCell(0, 0, one);
