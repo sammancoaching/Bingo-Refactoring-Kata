@@ -33,7 +33,7 @@ public class BingoBoard
 
     public void MarkCell(int x, int y)
     {
-        if (!IsInitialzed())
+        if (!IsInitialized())
         {
             throw new InvalidOperationException("board not initialized");
         }
@@ -45,7 +45,7 @@ public class BingoBoard
         return marked[x, y];
     }
 
-    public bool IsInitialzed()
+    public bool IsInitialized()
     {
         foreach (string col in cells)
         {

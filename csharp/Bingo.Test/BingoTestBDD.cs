@@ -9,7 +9,7 @@ public class BingoTestBdd
     void AnNewlyCreatedBoardIsNotInitialized()
     {
         GivenBingoBoardOfSize(1, 1);
-        ThenBoardIsNotInitialzed();
+        ThenBoardIsNotInitialized();
     }
 
     [Fact]
@@ -18,16 +18,18 @@ public class BingoTestBdd
         var anyValue = "42";
         board = new BingoBoard(1, 1);
         board.DefineCell(0, 0, anyValue);
-        board.IsInitialzed().Should().BeTrue();
+        board.IsInitialized().Should().BeTrue();
     }
 
     [Fact]
     void WhenAllFieldsOnRectangularBoardAreSetItIsInitialized()
     {
+        var one = "one two three";
+        var two = "Bingo cells can contain any text";
         GivenBingoBoardOfSize(1, 2);
-        WhenCellIsDefined(0, 0, "1");
-        WhenCellIsDefined(0, 1, "2");
-        ThenBoardIsInitialzed();
+        WhenCellIsDefined(0, 0, one);
+        WhenCellIsDefined(0, 1, two);
+        ThenBoardIsInitialized();
     }
 
     [Fact]
@@ -86,17 +88,17 @@ public class BingoTestBdd
         board.MarkCell(x, y);
     }
 
-    private void ThenBoardIsNotInitialzed()
+    private void ThenBoardIsNotInitialized()
     {
         BoardInitializeState().Should().BeFalse();
     }
 
-    private void ThenBoardIsInitialzed() {
+    private void ThenBoardIsInitialized() {
         BoardInitializeState().Should().BeTrue();
     }
 
     private bool BoardInitializeState() {
-        return board.IsInitialzed();
+        return board.IsInitialized();
     }
 
     private void ThenCellIsMarked(int x, int y) {
