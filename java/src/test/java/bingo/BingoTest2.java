@@ -1,7 +1,7 @@
 package bingo;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import org.junit.jupiter.api.Test;
 
@@ -27,6 +27,7 @@ class BingoTest2 {
 		board.defineCell(0, 0, anyValue);
 		assertThat(board.isInitialized()).isTrue();
 	}
+
 	@Test
 	void whenAllFieldsOnRectangularBoardAreSetItIsInitialized() {
 		String one = "0, 0";
@@ -42,9 +43,9 @@ class BingoTest2 {
 		String anyValue = "42";
 		board = new BingoBoard(1, 1);
 		board.defineCell(0, 0, anyValue);
-		assertThat(assertThrows(RuntimeException.class, () -> {
-			board.defineCell(0, 0, anyValue);
-		})).hasMessageContaining("already defined");
+		assertThatThrownBy(() -> board.defineCell(0, 0, anyValue)) //
+				.isInstanceOf(RuntimeException.class) //
+				.hasMessageContaining("already defined");
 	}
 
 	@Test
@@ -52,17 +53,17 @@ class BingoTest2 {
 		String anyValue = "42";
 		board = new BingoBoard(2, 2);
 		board.defineCell(0, 1, anyValue);
-		assertThat(assertThrows(RuntimeException.class, () -> {
-			board.defineCell(1, 0, anyValue);
-		})).hasMessage(anyValue + " already present at 0,1");
+		assertThatThrownBy(() -> board.defineCell(1, 0, anyValue)) //
+				.isInstanceOf(RuntimeException.class) //
+				.hasMessageContaining(anyValue + " already present at 0,1");
 	}
 
 	@Test
 	void aNonInitializedBoardCannotBeMarked() {
 		board = new BingoBoard(1, 1);
-		assertThat(assertThrows(RuntimeException.class, () -> {
-			board.markCell(0, 0);
-		})).hasMessageContaining("not initialized");
+		assertThatThrownBy(() -> board.markCell(0, 0)) //
+				.isInstanceOf(RuntimeException.class) //
+				.hasMessageContaining("not initialized");
 	}
 
 	@Test
