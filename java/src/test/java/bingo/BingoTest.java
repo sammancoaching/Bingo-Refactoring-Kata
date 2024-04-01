@@ -25,13 +25,12 @@ class BingoTest {
 
 	@Test
 	void whenAllFieldsOnRectangularBoardAreSetItIsInitialized() {
-		String one = "0, 0";
-		String two = "0, 1";
+		String one = "one, two, three";
+		String two = "Bingo cells can contain any text";
 		givenBingoBoardOfSize(1, 2);
 		whenCellIsDefined(0, 0, one);
 		whenCellIsDefined(0, 1, two);
 		thenBoardIsInitialized();
-
 	}
 
 	@Test

@@ -24,8 +24,8 @@ public class BingoTestBdd
     [Fact]
     void WhenAllFieldsOnRectangularBoardAreSetItIsInitialized()
     {
-        var one = "0, 0";
-        var two = "0, 1";
+        var one = "one, two, three";
+        var two = "Bingo cells can contain any text";
         GivenBingoBoardOfSize(1, 2);
         WhenCellIsDefined(0, 0, one);
         WhenCellIsDefined(0, 1, two);
