@@ -7,7 +7,7 @@ class BingoBoard:
         self.__cells = [ [None]*height for _ in range(width) ]
         self.__marked = [ [False]*height for _ in range(width) ]
 
-    def define_cell(self, x: int, y: int, value: string):
+    def define_cell(self, x: int, y: int, value: str):
         if self.__cells[x][y] is not None:
             raise IllegalStateException("Cell already defined.")
 
