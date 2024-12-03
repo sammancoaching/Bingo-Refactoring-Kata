@@ -1,6 +1,6 @@
 # Bingo Refactoring Kata
 
-Can you spot the any code smells? We think you should be able to find
+Can you spot any code smell? We think you should be able to find
 
 - Primitive Obsession
 - Data Clumps
