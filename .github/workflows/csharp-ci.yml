@@ -1,0 +1,42 @@
+name: C# CI
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'csharp/**'
+      - '.github/**'
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'csharp/**'
+      - '.github/**'
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '6.0.x'
+
+      - name: Restore dependencies
+        run: |
+          cd csharp
+          dotnet restore Bingo.sln
+
+      - name: Build Solution
+        run: |
+          cd csharp
+          dotnet build Bingo.sln --no-restore --configuration Release
+
+      - name: Run Tests
+        run: |
+          cd csharp
+          dotnet test Bingo.sln --no-build --configuration Release --logger "trx;LogFileName=test_results.xml"
+
