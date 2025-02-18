@@ -1,0 +1,39 @@
+name: Python CI with Unittest
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'python/**'
+      - '.github/**'
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'python/**'
+      - '.github/**'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python 3.13
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.13"
+    - name: Install dependencies
+      run: |
+        cd python
+        python -m pip install --upgrade pip
+        pip install flake8 pytest
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Run Unittests
+      run: |
+        cd python
+        python -m unittest discover -s . -p '*_tests.py'
+
