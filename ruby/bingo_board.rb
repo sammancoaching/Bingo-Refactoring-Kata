@@ -10,7 +10,7 @@ class BingoBoard
 
   def define_cell(x, y, value)
     if @cells[x][y]
-      raise IllegalStateException, 'Cell already defined.'
+      raise IllegalStateException, "Cell already defined."
     end
 
     @cells.each_with_index do |row, c|
@@ -26,7 +26,7 @@ class BingoBoard
 
   def mark_cell(x, y)
     unless initialized?
-      raise IllegalStateException, 'Board is not initialized.'
+      raise IllegalStateException, "Board is not initialized."
     end
 
     @marked[x][y] = true

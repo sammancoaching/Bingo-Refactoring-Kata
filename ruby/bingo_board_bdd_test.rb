@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'minitest/autorun'
-require_relative 'bingo_board'
+require "minitest/autorun"
+require_relative "bingo_board"
 
 class BingoBoardBDDTest < Minitest::Test
   def test_a_newly_created_board_is_not_initialized
@@ -10,7 +10,7 @@ class BingoBoardBDDTest < Minitest::Test
   end
 
   def test_when_all_fields_are_set_the_board_is_initialized
-    any_value = '42'
+    any_value = "42"
 
     given_a_bingo_board_of_size(1, 1)
     when_cell_is_defined(0, 0, any_value)
@@ -18,8 +18,8 @@ class BingoBoardBDDTest < Minitest::Test
   end
 
   def test_when_all_fields_on_rectangular_board_are_set_it_is_initialized
-    one = 'one, two, three'
-    two = 'Bingo cells can contain any text'
+    one = "one, two, three"
+    two = "Bingo cells can contain any text"
 
     given_a_bingo_board_of_size(1, 2)
     when_cell_is_defined(0, 0, one)
@@ -28,29 +28,29 @@ class BingoBoardBDDTest < Minitest::Test
   end
 
   def test_a_defined_cell_cant_be_redefined_even_if_its_the_same_value
-    any_value = '42'
+    any_value = "42"
 
     given_a_bingo_board_of_size(1, 1)
     when_cell_is_defined(0, 0, any_value)
-    
+
     assert_raises(BingoBoard::IllegalStateException) do
       when_cell_is_defined(0, 0, any_value)
     end
   end
 
   def test_duplicate_cells_are_not_allowed
-    any_value = '42'
+    any_value = "42"
 
     given_a_bingo_board_of_size(2, 2)
     when_cell_is_defined(0, 1, any_value)
-    
+
     assert_raises(BingoBoard::IllegalStateException) do
       when_cell_is_defined(1, 0, any_value)
     end
   end
 
   def test_a_cell_can_be_marked_on_initialized_board
-    any_value = '42'
+    any_value = "42"
 
     given_a_bingo_board_of_size(1, 1)
     when_cell_is_defined(0, 0, any_value)
@@ -60,7 +60,7 @@ class BingoBoardBDDTest < Minitest::Test
 
   def test_a_non_initialized_board_cannot_be_marked
     given_a_bingo_board_of_size(1, 1)
-    
+
     assert_raises(BingoBoard::IllegalStateException) do
       when_cell_is_marked(0, 0)
     end
