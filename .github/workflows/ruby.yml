@@ -29,4 +29,5 @@ jobs:
       - name: Run tests
         run: |
           cd ruby
-          ruby *_test.rb
+          ruby bingo_board_test.rb
+          ruby bingo_board_bdd_test.rb
