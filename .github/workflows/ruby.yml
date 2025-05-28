@@ -1,0 +1,32 @@
+name: Ruby CI with Minitest
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "ruby/**"
+      - ".github/**"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "ruby/**"
+      - ".github/**"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.4"
+
+      - name: Run tests
+        run: |
+          cd ruby
+          ruby *_test.rb
