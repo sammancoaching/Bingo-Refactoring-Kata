@@ -23,7 +23,7 @@ jobs:
       - name: Set up .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '6.0.x'
+          global-json-file: csharp/global.json
 
       - name: Restore dependencies
         run: |
