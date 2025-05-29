@@ -1,11 +1,11 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bingo", "Bingo\Bingo.csproj", "{FAA94BC6-868C-49C9-8F5D-AE0AF13A1887}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bingo.Test", "Bingo.Test\Bingo.Test.csproj", "{C5D3C9D5-DCC4-4A6E-BF6D-7C16DDC08AE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bingo.Test", "Bingo.Test\Bingo.Test.csproj", "{C5D3C9D5-DCC4-4A6E-BF6D-7C16DDC08AE7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
