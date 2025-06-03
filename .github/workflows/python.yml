@@ -1,6 +1,9 @@
 name: Python CI with Unittest
 
 on:
+  schedule:
+  # each fifteen day of month
+  - cron: "0 0 15 * *"
   push:
     branches: [ "main" ]
     paths:

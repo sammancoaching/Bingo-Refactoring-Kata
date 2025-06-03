@@ -1,6 +1,9 @@
 name: Go
 
 on:
+  schedule:
+  # each fifteen day of month
+  - cron: "0 0 15 * *"
   push:
     paths:
       - 'go/**'
