@@ -5,11 +5,6 @@ namespace KataTest;
 use Kata\BingoBoard;
 use PHPUnit\Framework\TestCase;
 
-/**
- * This class is identical to BingoTestBDD but all BDD-style methods are
- * inlined (and thus this test does depend at multiple points on the
- * implementation details of BingoBoard)
- */
 class BingoTest extends TestCase
 {
     private BingoBoard $board;
