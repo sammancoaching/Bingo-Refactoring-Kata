@@ -1,4 +1,5 @@
-
 *.iml
+*.cache
 .idea/
+.claude/
 vendor/
