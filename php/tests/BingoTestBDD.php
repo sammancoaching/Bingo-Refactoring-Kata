@@ -105,6 +105,6 @@ class BingoTestBDD extends TestCase
 
     private function thenCellIsMarked(int $x, int $y): void
     {
-        $this->assertTrue($this->board->isMarked($x, $y));
+        $this->assertTrue($this->board->is_marked($x, $y));
     }
 }
