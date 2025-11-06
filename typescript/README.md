@@ -19,9 +19,3 @@ npm test
 ```bash
 npm run test:watch
 ```
-
-## Building
-
-```bash
-npm run build
-```
