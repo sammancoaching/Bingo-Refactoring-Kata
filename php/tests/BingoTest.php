@@ -75,6 +75,6 @@ class BingoTest extends TestCase
         $this->board = new BingoBoard(1, 1);
         $this->board->defineCell(0, 0, $anyValue);
         $this->board->markCell(0, 0);
-        $this->assertTrue($this->board->isMarked(0, 0));
+        $this->assertTrue($this->board->is_marked(0, 0));
     }
 }
