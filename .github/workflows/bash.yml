@@ -1,0 +1,22 @@
+name: Bash CI with tests
+
+on:
+  - pull_request
+  - push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install bashunit
+        run: |
+          cd bash
+          curl -s https://bashunit.typeddevs.com/install.sh | bash
+
+      - name: Run tests
+        run: |
+          cd bash
+          ./lib/bashunit *_test.sh
